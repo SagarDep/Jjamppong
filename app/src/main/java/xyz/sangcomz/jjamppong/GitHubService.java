@@ -29,6 +29,7 @@ interface GitHubService {
             @Path("owner") String owner,
             @Path("repo") String repo);
 
+
     @GET("repos/{owner}/{repo}/contributors")
     Single<List<Contributor>> repoContributorsUseRx(
             @Path("owner") String owner,

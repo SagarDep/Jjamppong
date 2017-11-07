@@ -1,19 +1,25 @@
 <?xml version="1.0" encoding="utf-8"?>
-<layout>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
 
     <data>
+
 
         <variable
             name="contributor"
             type="xyz.sangcomz.jjamppong.Contributor" />
+
+        <variable
+            name="callback"
+            type="xyz.sangcomz.jjamppong.ListBindingAdapter" />
     </data>
 
 
-    <android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-        xmlns:app="http://schemas.android.com/apk/res-auto"
+    <android.support.constraint.ConstraintLayout xmlns:app="http://schemas.android.com/apk/res-auto"
         xmlns:tools="http://schemas.android.com/tools"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        android:background="?selectableItemBackground"
+        android:onClick="@{(v) -> callback.onClickItem(v, contributor)}">
 
         <de.hdodenhof.circleimageview.CircleImageView
             android:id="@+id/profile"
@@ -21,9 +27,9 @@
             android:layout_height="80dp"
             android:padding="16dp"
             android:scaleType="centerCrop"
-            android:src="@{contributor.avatar_url}"
             app:civ_border_color="@color/colorPrimary"
             app:civ_border_width="2dp"
+            app:imgUrlLoad="@{contributor.avatar_url}"
             app:layout_constraintEnd_toStartOf="@+id/name"
             app:layout_constraintHorizontal_bias="0.5"
             app:layout_constraintHorizontal_chainStyle="spread"
@@ -33,14 +39,14 @@
             android:id="@+id/name"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:src="@{contributor.login}"
+            android:text="@{contributor.login}"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-
             app:layout_constraintHorizontal_bias="0.5"
             app:layout_constraintStart_toEndOf="@+id/profile"
             app:layout_constraintTop_toTopOf="parent"
             tools:text="name" />
+
     </android.support.constraint.ConstraintLayout>
 </layout>
 

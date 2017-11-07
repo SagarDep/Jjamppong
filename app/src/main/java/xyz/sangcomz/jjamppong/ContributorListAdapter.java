@@ -30,12 +30,12 @@ public class ContributorListAdapter extends RecyclerView.Adapter<ContributorList
                         R.layout.item,
                         parent,
                         false);
+        binding.setCallback(new ListBindingAdapter());
         return new ViewHolder(binding);
     }
 
     @Override
     public void onBindViewHolder(ViewHolder holder, int position) {
-//        holder.setView(contributors.get(position));
         holder.bind(contributors.get(position));
     }
 
