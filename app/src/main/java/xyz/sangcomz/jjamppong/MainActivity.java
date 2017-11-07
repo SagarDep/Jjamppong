@@ -46,26 +46,27 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+
 //        gitHubService.repoContributorsUseRx("sangcomz", "fishbun")
 //                .subscribeOn(Schedulers.io())
 //                .observeOn(AndroidSchedulers.mainThread())
 //                .subscribe(new SingleObserver<List<Contributor>>() {
 //                    @Override
 //                    public void onSubscribe(Disposable d) {
-//                        System.out.println("onSubscribe onSubscribe onSubscribe");
+//                        d.dispose();
 //                    }
 //
 //                    @Override
 //                    public void onSuccess(List<Contributor> contributors) {
-//                        System.out.println("onSuccess onSuccess onSuccess");
-//                        for (Contributor contributor : contributors) {
-//                            System.out.println("contributor rx :::: " + contributor.login);
+//                        RecyclerView.Adapter adapter = binding.list.getAdapter();
+//                        if (adapter instanceof ContributorListAdapter) {
+//                            ((ContributorListAdapter) adapter).setContributors(contributors);
 //                        }
 //                    }
 //
 //                    @Override
 //                    public void onError(Throwable e) {
-//                        System.out.println("onError onError onError");
+//                        //TODO
 //                    }
 //                });
 
