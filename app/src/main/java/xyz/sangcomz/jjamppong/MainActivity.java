@@ -25,7 +25,8 @@ public class MainActivity extends AppCompatActivity {
         initRecyclerView();
 
 
-        GitHubService gitHubService = GitHubService.retrofit.create(GitHubService.class);
+        GitHubService gitHubService = new ApiManager().buildGithubService();
+
         Call<List<Contributor>> call = gitHubService
                 .repoContributors("square", "retrofit");
 

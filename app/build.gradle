@@ -25,17 +25,30 @@ android {
 
 dependencies {
     implementation fileTree(include: ['*.jar'], dir: 'libs')
+    //support
     implementation "com.android.support:appcompat-v7:$rootProject.support_version"
     implementation "com.android.support:recyclerview-v7:$rootProject.support_version"
 
+    //constraint
     implementation "com.android.support.constraint:constraint-layout:$rootProject.constraint_version"
+
+    //okHttp
+    implementation "com.squareup.okhttp3:logging-interceptor:$rootProject.okhttp_version"
     implementation "com.squareup.okhttp3:okhttp:$rootProject.okhttp_version"
+
+    //retrofit
     implementation "com.squareup.retrofit2:retrofit:$rootProject.retrofit_version"
     implementation "com.squareup.retrofit2:adapter-rxjava2:$rootProject.retrofit_version"
     implementation "com.squareup.retrofit2:converter-gson:$rootProject.retrofit_version"
+
+    //picasso
     implementation "com.squareup.picasso:picasso:$rootProject.picasso_version"
+
+    //rxJava
     implementation "io.reactivex.rxjava2:rxjava:$rootProject.rxJava2_version"
     implementation "io.reactivex.rxjava2:rxandroid:$rootProject.rxAndroid2_version"
+
+    //circle imageview
     implementation 'de.hdodenhof:circleimageview:2.2.0'
 
 }
